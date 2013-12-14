@@ -1,4 +1,4 @@
-VisualforceForJqPlot
+Visualforce_JqPlotChart
 ====================
 
 VisualforceページでjqPlotを利用してグラフを表示する際のサンプルです。  
