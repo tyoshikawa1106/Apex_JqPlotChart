@@ -1,0 +1,33 @@
+<apex:page showHeader="true" sidebar="false" id="page">
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
+    
+    <apex:stylesheet value="{!URLFOR($Resource.jqPlot, 'dist/jquery.jqplot.min.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jqPlot,'dist/jquery.jqplot.min.js')}" />
+    
+    <apex:includeScript value="{!URLFOR($Resource.jqPlot,'dist/plugins/jqplot.cursor.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jqPlot,'dist/plugins/jqplot.highlighter.min.js')}" />
+    
+    <apex:form id="form">
+        <div id="lineChart"></div>
+    </apex:form>
+    
+    <script>
+        var graphData = [
+            [3,7,9,1,4,6,8,2,5],
+            [4,8,6,3,6,3,5,7,9]
+        ];
+        var options = {
+            cursor:{
+                show: true,
+                zoom: true
+            },
+            highlighter:{
+                show: true,
+                sizeAdjust: 7.5
+            },
+            title : 'jqPlot'
+        };
+        var plot = $.jqplot('lineChart', graphData, options);
+    </script>
+    
+</apex:page>
